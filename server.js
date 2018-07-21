@@ -10,7 +10,7 @@ const app = express();
 
 
 // Connect to MongoDB using key value pair or connect to local db for production
-const db = process.env.DATABASEURI || "mongodb://localhost/mern-stack-list1";
+const db = require('./config/keys').mongoURI;
 mongoose
   .connect(db)
   .then(() => console.log('MongoDB Connected...'))
